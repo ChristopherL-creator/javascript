@@ -2,6 +2,7 @@
 console.log('hello world'); 
 
 // alert("hello world"); 
+
 console.log("hello cinzia"); 
 
 console.log('7');  
@@ -73,3 +74,57 @@ console.log("7 === 12", 7 === 12);
 console.log("'7' === 7", '7' === 7, "stringa diversa da numero"); 
 
 console.log("'7' == 7", '7' == 7, "vede che hanno tutti e due 7"); 
+
+// variabili possono essere ridefinite
+let pippo = 7; 
+
+console.log(pippo); 
+
+console.log(pippo + 3); 
+
+let pluto = 5; 
+
+console.log(pippo + pluto); 
+
+let paperino = "ciao"; 
+
+console.log(paperino); 
+
+console.log(paperino + pluto); 
+
+pluto = "mondo"; 
+
+console.log(paperino + pluto); 
+
+var paperoga = 12; 
+
+var paperone = 15; 
+
+console.log(paperoga + paperino); 
+
+console.log(paperone + paperoga); 
+
+// const non possono essere ridefinite, viene usato di default
+const topolino = "viva"; 
+
+const topolina = "javascript"; 
+
+console.log(topolino + topolina); 
+
+// errore di riassegnazione
+// topolina = "mondo"; 
+
+// prompt("ciao");
+
+const stringa1 = prompt("inserisci la prima stringa");
+
+const stringa2 = prompt("inserisci seconda stringa"); 
+
+// console.log(stringa1 + stringa2); 
+
+alert(stringa1 + stringa2); 
+
+
+
+
+
