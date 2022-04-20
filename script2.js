@@ -61,6 +61,8 @@
 //     console.log("operazione non ammessa"); 
 // }
 
+ 
+
 const numero = 41; 
 
 const isDivisibilePerDue = numero % 2 === 0; 
@@ -114,4 +116,4 @@ if (isDivisibilePerDue || isDivisibilePerTre || isDivisibilePerQuattro) {
 // chiedo all'utente di inserire numero 
 // se numero divisibiel per 3 scrivo in console FIZZ 
 // se numero divisibile per 5 scrivo in console BUZZ 
-// se numero divisibile per entrambi scrivo i console FIZZBUZZ
+// se numero divisibile per entrambi scrivo i console FIZZBUZZ 
