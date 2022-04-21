@@ -70,12 +70,51 @@ console.log("7 === 7", 7 === 7);
 
 console.log("7 === 12", 7 === 12); 
 
+// operatore di diverstià 
+const brontolone = 5; 
+const puffetta = 9; 
+
+const SonoDiversi = !(brontolone === puffetta); 
+const SonoDiversi2 = brontolone !== puffetta; 
+
+// operatori di maggiore e minore 
+const minore = brontolone < puffetta; 
+const maggiore = brontolone > puffetta; 
+
+const minoreOUguale = brontolone <= puffetta; 
+const maggioreOUguale = brontolone >= puffetta;
+
+// undefined 
+let grandePuffo; 
+
+console.log('log di grandePuffo', grandePuffo) 
+
+// null 
+let quattrocchi = null; 
+
+console.log('log di quattrocchi', quattrocchi); 
+
+// NaN - Not a Number 
+let numeroSbagliato = "cinque"; 
+
+let numero2 = parseInt(numeroSbagliato); 
+
+console.log("numero sbagliato", numero2); 
+
+// infinity 
+const infinitoPositivo = +Infinity; 
+
+const infinitoNegativo = -Infinity; 
+
+
+
+
 // complicazioni 
 console.log("'7' === 7", '7' === 7, "stringa diversa da numero"); 
 
 console.log("'7' == 7", '7' == 7, "vede che hanno tutti e due 7"); 
 
-// variabili possono essere ridefinite
+// variabili let possono essere ridefinite
 let pippo = 7; 
 
 console.log(pippo); 
@@ -124,7 +163,10 @@ const stringa2 = prompt("inserisci seconda stringa");
 
 alert(stringa1 + stringa2); 
 
+// camel case 
+let laMiaVariabileDiEsempio;
 
+const LA_MIA_IMPORTANTISSIMA_COSTANTE = 3.14;
 
 
 
