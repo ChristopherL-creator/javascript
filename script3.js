@@ -54,7 +54,7 @@
 // } 
 
 
-// cicli nei cicli 
+// cicli nei cicli  
 for (let riga = 1; riga < 4; riga++); {
     // console.log("sto leggendo la riga: " + riga) 
     for (let colonna = 1; colonna < 4; colonna++); {
