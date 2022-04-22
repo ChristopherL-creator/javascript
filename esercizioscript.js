@@ -28,13 +28,13 @@ const isDivisibilePerThree = numero1 % 3 === 0;
 
 // usando solo due variabili 
 
-// if (isDivisibilePerThree && isDivisibilePerCinque) {
-//     console.log("FIZZBUZZ");
-// } else if (isDivisibilePerCinque){
-//     console.log("BUZZ");
-// } else if (isDivisibilePerThree){
-//     console.log("FIZZ")
-// } 
+if (isDivisibilePerThree && isDivisibilePerCinque) {
+    console.log("FIZZBUZZ");
+} else if (isDivisibilePerCinque){
+    console.log("BUZZ");
+} else if (isDivisibilePerThree){
+    console.log("FIZZ")
+} 
 
 // usando let (riscrivibile)
 

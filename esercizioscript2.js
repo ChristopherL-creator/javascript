@@ -63,37 +63,55 @@
 
 //_________________________________________________________________________ 
 
+// for (let r = 0; r < 8; r++) {
+//     let stringaDiRiga = ""; 
+
+//     for (let c = 0; c < 8; c++){ 
+        
+//         const isRigaPari = r % 2 === 0; 
+//         const isColonnaPari = c % 2 === 0;
+        
+//         if (isRigaPari && isColonnaPari) {
+//             stringaDiRiga = stringaDiRiga + "#";
+//         } else if (!isRigaPari && !isColonnaPari){
+//             stringaDiRiga = stringaDiRiga + "#"; 
+//         } else { 
+//             stringaDiRiga = stringaDiRiga + " ";
+//         }
+//     } 
+
+//     console.log(stringaDiRiga);
+// } 
+
+// //_________________________________________________________________________ 
+
+// for (let r = 0; r < 8; r++) {
+//     let stringaDiRiga = ""; 
+
+//     for (let c = 0; c < 8; c++){ 
+
+//         const sommaDiRigaEColonna = r + c; 
+//         const isSommaPari = sommaDiRigaEColonna % 2 === 0;
+
+//         if (isSommaPari) { 
+//             stringaDiRiga = stringaDiRiga + '#';
+//         } else { 
+//             stringaDiRiga = stringaDiRiga + " ";
+//         }
+//     } 
+
+//     console.log(stringaDiRiga);
+// } 
+
+//______________________________________________________________________________
+
 for (let r = 0; r < 8; r++) {
+    
     let stringaDiRiga = ""; 
 
     for (let c = 0; c < 8; c++){ 
-        
-        const isRigaPari = r % 2 === 0; 
-        const isColonnaPari = c % 2 === 0;
-        
-        if (isRigaPari && isColonnaPari) {
-            stringaDiRiga = stringaDiRiga + "#";
-        } else if (!isRigaPari && !isColonnaPari){
-            stringaDiRiga = stringaDiRiga + "#"; 
-        } else { 
-            stringaDiRiga = stringaDiRiga + " ";
-        }
-    } 
 
-    console.log(stringaDiRiga);
-} 
-
-//_________________________________________________________________________ 
-
-for (let r = 0; r < 8; r++) {
-    let stringaDiRiga = ""; 
-
-    for (let c = 0; c < 8; c++){ 
-
-        const sommaDiRigaEColonna = r + c; 
-        const isSommaPari = sommaDiRigaEColonna % 2 === 0;
-
-        if (isSommaPari) { 
+        if (r % 2 === c % 2) { 
             stringaDiRiga = stringaDiRiga + '#';
         } else { 
             stringaDiRiga = stringaDiRiga + " ";
