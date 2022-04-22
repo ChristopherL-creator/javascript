@@ -31,13 +31,16 @@ else {
 //  # # # #
 // # # # # 
 
-// for (let riga = 1; riga <8; riga++); {
-//     // console.log("sto leggendo la riga: " + riga) 
-//     for (let colonna = 1; colonna < 5; colonna++); {
-//         // console.log("sto leggendo la colonna:" + colonna); 
-//         console.log('sto leggendo la cella: ' + riga + ', ' + colonna);
-//     }
-// } 
+console.log("# # # #\n # # # # \n# # # #\n # # # #\n# # # #"); 
+
+console.log( //backtick, consente stringhe interpolate: console.log(`il docente ${costante} ha ${cotante} anni);
+  `   # # # #
+    # # # #
+   # # # #
+    # # # #
+   # # # #
+    # # # #
+   # # # #` );
 
 // esercizio 3
 
@@ -47,7 +50,9 @@ else {
 // ###
 // ####
 // #####
-// ######
+// ###### 
+
+console.log(" #\n ##\n ###\n ####\n #####\n ######\n");
 
 // esercizio 4
 
@@ -58,3 +63,5 @@ else {
 //   #####
 //  #######
 // #########
+
+console.log("     #\n    ###\n   #####\n  #######\n #########\n");
