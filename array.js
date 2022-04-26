@@ -71,7 +71,7 @@
 // console.log(max(arrayOfNumbers)); 
 
 // Trovare il maggior tra gli elementi (negativi) dell'array; 
-const arrayOfNumbers = [1, 5, 3, 8, 6]; 
+// const arrayOfNumbers = [1, 5, 3, 8, 6]; 
 
 // function max(array) { 
 // // (array) è reltivo alla funzione; 
@@ -110,36 +110,96 @@ const arrayOfNumbers = [1, 5, 3, 8, 6];
 // console.log(CloneAndaddOneToArray(arrayOfNumbers)); 
 
 // Restituisce array con soli numeri pari; 
-function findEvenNumbers(array) {
+// function findEvenNumbers(array) {
     
-    const newArray = []; 
+//     const newArray = []; 
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        if (element % 2 === 0) {
-            newArray.push(element);
-        }
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i]; 
+//         if (element % 2 === 0) {
+//             newArray.push(element);
+//         }
         
-    } 
+//     } 
     
-    return newArray
-} 
+//     return newArray
+// } 
 
-console.log(findEvenNumbers(arrayOfNumbers)); 
+// console.log(findEvenNumbers(arrayOfNumbers)); 
 
 // Somma di tutti gli elementi dell'array (sumAll, operazione 
 // di riduzione, restituisce un solo valore non originario 
 // dell'array); 
-function sumAll(array) {
+// function sumAll(array) {
     
-    let risultato = 0; 
+//     let risultato = 0; 
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        risultato = risultato + element;
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i]; 
+//         risultato = risultato + element;
+//     } 
+
+//     return risultato;
+// } 
+
+// console.log(sumAll(arrayOfNumbers)); 
+
+// Array di stringhe  
+// const arrayOfStrings = ['pippo', 'pluto', 'paperino']; 
+
+// console.log(arrayOfStrings); 
+
+// function ArrayToUppercase(array) {
+    
+//     const newArray = []; 
+
+//     for (const element of array) {
+//         const uppercaseString = element.toUpperCase(); 
+//         newArray.push (uppercaseString);
+//     } 
+
+//     return newArray;
+// }
+ 
+// console.log(ArrayToUppercase(arrayOfStrings)); 
+// da minuscolo a maiuscolo (mapping); 
+
+// Ciclo dentro ciclo 
+const arrayOfArray = [[2, 6, 4], 
+                      [8, 5, 1], 
+                      [9, 3, 6]]; 
+
+//                       for (let i = 0; i < arrayOfArray.length; i++) {
+//                           const riga = arrayOfArray[i]; 
+//                           for (let j = 0; j < riga.length; j++) {
+//                               const cella = riga[j];
+//                               console.log(cella);
+//                           }
+                          
+//                       } 
+// Array multidimensionale, array dentro array; mi serve un 
+// ulteriore "for" per navigare ciascun ordine di arrays; 
+
+function cloneAndAddOneBiDimensional(array) {
+    
+    const newArray = []; 
+
+    for (const riga of array) { 
+
+        const newRiga = []; 
+
+        for (const cella of riga) {
+            
+            const cellaPlusOne = cella + 1 
+            newRiga.push(cellaPlusOne);
+        } 
+
+        newArray.push(newRiga);
     } 
 
-    return risultato;
+    return newArray;
 } 
 
-console.log(sumAll(arrayOfNumbers)); 
+console.log(cloneAndAddOneBiDimensional(arrayOfArray)); 
+// valori di array precedete vengono incrementati di "1"; 
+
