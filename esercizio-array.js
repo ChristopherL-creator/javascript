@@ -6,36 +6,38 @@ const testArray3 = [[1, 4, 8, 12],
 
 // 1) funzione Min; risultato -123;
 function min(array) {
-    
-} 
+  
+}
 
 console.log(min(testArray1));
 
 // 2) funzione somma solo pari; risultato 200008;
 function sumEven(array) {
-    
-} 
+  
+}
 
-console.log(sumEven);
+console.log(sumEven(testArray1));
 
 // 3) stringhe con più di 5 caratteri; risutlato 
 // ['rosso', 'verde', 'giallo', 'arancione', 'magenta', 'blu'];
 function moreThan5Chars(array) {
-    
-} 
+  
+}
 
 console.log(moreThan5Chars(testArray2)); 
 
-// 4) 
-function firstUppercase(array) {
-     
-} 
+// 4) ["Rosso", "Verde", "Giallo", "Arancione", "Magenta", "Blu"];
+function FirstUpperCase(array) {
+  
+}
 
-console.log(firstUppercase(array)); 
 
-// 5) 
-function superSumAll(array){ 
+console.log(FirstUpperCase(testArray2)); 
 
-} 
+// 5) somma degli elementi dell'array;
+function SuperSumAll(array) {
 
-console.log(superSumAll(array));
+}
+
+
+console.log(SuperSumAll(testArray3));
