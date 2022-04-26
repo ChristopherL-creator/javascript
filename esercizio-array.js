@@ -103,6 +103,7 @@ function reverse(array) {
 } 
 
 console.log(reverse(testArray1)); 
+
 console.log(reverse(testArray2)); 
 
 // 4) trasformare array multidimensionale in array unico;
