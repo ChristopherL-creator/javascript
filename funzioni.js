@@ -122,7 +122,7 @@
 //     }
 // } 
 
-function dividi(dividendo, divisore = 2) {
+// function dividi(dividendo, divisore = 2) {
     // if (!dividendo) {
     //     return "mi serve il dividendo";
     // } 
@@ -131,18 +131,18 @@ function dividi(dividendo, divisore = 2) {
 //     divisore = 2; 
 //    } 
 
-    const quoziente = dividendo / divisore; 
-    return quoziente;
-} 
+//     const quoziente = dividendo / divisore; 
+//     return quoziente;
+// } 
 
-const risultato = dividi(8, 2);  
-console.log("due parametri", risultato); 
-console.log("---------"); 
-const risultato2 = dividi(8); 
-console.log("un parametro", risultato2); 
-console.log("---------"); 
-const risultato3 = dividi(); 
-console.log("zero parametri", risultato3);
+// const risultato = dividi(8, 2);  
+// console.log("due parametri", risultato); 
+// console.log("---------"); 
+// const risultato2 = dividi(8); 
+// console.log("un parametro", risultato2); 
+// console.log("---------"); 
+// const risultato3 = dividi(); 
+// console.log("zero parametri", risultato3);
 
 // console.log("---------"); 
 // dividi(8); 
@@ -155,33 +155,175 @@ console.log("zero parametri", risultato3);
 
 //_____________________ Funzione anonima ______________________ 
 
-new function(params) {
+// new function(params) {
     
-} 
+// } 
 
 // Oppure
 
-const aggiungiUno = function(numero) {
-    return numero + 1;
-}
+// const aggiungiUno = function(numero) {
+//     return numero + 1;
+// }
 
-const risultato4 = aggiungiUno(5); 
+// const risultato4 = aggiungiUno(5); 
 
-console.log("funzione anonima", risultato4); 
+// console.log("funzione anonima", risultato4); 
 
 // Oppure funzione lambda, più moderna 
 
-const aggiungiUnoLambda = (numero) => numero + 1;  
+// const aggiungiUnoLambda = (numero) => numero + 1;  
 
-const risultato5 = aggiungiUnoLambda(8);
+// const risultato5 = aggiungiUnoLambda(8);
 
-console.log("funzione lambda", risultato5); 
+// console.log("funzione lambda", risultato5); 
 
 //___________________________________________________ 
 
-const dividiLambda = (dividendo, divisore) => { 
+// const dividiLambda = (dividendo, divisore) => { 
     
-    const quoziente = dividendo / divisore; 
+//     const quoziente = dividendo / divisore; 
     
-    return quoziente;
+//     return quoziente;
+// } 
+
+// Funzioni di ordine superiore, manipolano 
+// (generano, sfruttano) altre funzioni
+
+// function somma(numero1, numero2) {
+//     return numero1 + numero2;
+// } 
+
+// function sottrazione(numero1, numero2) {
+//     return numero1 - numero2;
+// } 
+
+// function moltiplicazione(numero1, numero2) {
+//     return numero1 * numero2;
+// } 
+
+// function divisione(numero1, numero2) {
+//     return numero1 / numero2;
+// } 
+// si creano prima funzioni che possa usare, o si può  
+// direttamente usare una funzione lambda;
+
+// function eseguiOperazione(numero1, numero2, operazione) {
+//     return operazione(numero1, numero2); 
+// } 
+
+// function resto(numero1, numero2) {
+//     return numero1 % numero2;
+// }
+
+// const restoLambda = (n1, n2) => n1 % n2; 
+// funzione lambda;
+
+// console.log(eseguiOperazione(5, 3, moltiplicazione)); 
+
+// console.log(eseguiOperazione (9, 4, (n1, n2) => n1 % n2 )); 
+// si può direttamente usare una funzione lambda; metodo 
+// più usato; 
+
+// function somma1(numero) { 
+//     return numero + 1;
+// } 
+
+// function somma2(numero) { 
+//     return numero + 2;
+// } 
+
+// function generaSomma(numeroDaSommare) {
+//     return (numero) => numero + numeroDaSommare;
+// } 
+// funzione superiore; 
+
+// const sommaTre = generaSomma(3); 
+
+// console.log(sommaTre(5)); 
+
+// ______________ FILTERING ____________________ 
+
+const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12]; 
+
+function keepEven(array) {
+    
+    const newArray = []; 
+
+    for (let i =  0; i <  array.length; i++ ) {
+        const element = array[i]; 
+
+        const isElementEven = element % 2 === 0; 
+
+        if(isElementEven){ 
+            newArray.push(element);
+        }
+        
+    } 
+
+    return newArray;
+} 
+
+console.log(keepEven(testArray)); 
+
+//--------------------------------------------------------
+
+function keepGreaterThan10(array) {
+    
+    const newArray = []; 
+
+    for (let i =  0; i <  array.length; i++ ) {
+        const element = array[i]; 
+
+        const isElementEven = element > 10; 
+
+        if(isElementEven){ 
+            newArray.push(element);
+        }
+        
+    } 
+
+    return newArray;
+} 
+
+console.log(keepGreaterThan10(testArray)); 
+
+//--------------------------------------------------------
+
+function filter(array, filterFunction) {
+    
+    const newArray = []; 
+
+    for (let i =  0; i <  array.length; i++ ) {
+        const element = array[i]; 
+
+        const isElementToAdd = filterFunction(element); 
+
+        if(isElementToAdd){ 
+            newArray.push(element);
+        }
+        
+    } 
+
+    return newArray;
+} 
+
+function isEven(number) {
+    if (number % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    } 
+// return number % 2 === 0;
+} 
+
+function isGreaterThan10(number) { 
+    return number > 10;
 }
+
+console.log(filter(testArray,isEven)); 
+// passo a funzione superiore l'array "testArray", 
+// e funzione "isEven"; 
+
+console.log(filter(testArray,isGreaterThan10)); 
+
+

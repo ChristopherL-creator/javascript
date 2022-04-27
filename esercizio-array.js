@@ -29,18 +29,14 @@ function sumEven(array) {
   
     let risultato = 0; 
 
-    const newArray = []; 
         for (let i = 0; i < array.length; i++) {
             const element = array[i]; 
+            
             if (element % 2 === 0) {
-                newArray.push(element);
+                risultato = risultato + element;
         }     
-    } 
-    for (let i = 0; i < newArray.length; i++) {
-        const element2 = newArray[i]; 
-        risultato = risultato + element2;
     }  
-    return risultato
+    return risultato;
 }
 
 console.log(sumEven(testArray1));
@@ -49,45 +45,83 @@ console.log(sumEven(testArray1));
 // ['rosso', 'verde', 'giallo', 'arancione', 'magenta', 'blu'];
 function moreThan5Chars(array) { 
 
-    const newArray3 = [];
+    const newArray = [];
     
    for (let i = 0; i < testArray2.length; i++) {
-        if(testArray2[i].length > 5) {
-        newArray3[i] = array[i];
+        const element = array [i];      
+        
+        if(testArray2[i].length > 5) { 
+            newArray.push(element);
         }
-       
    }
 
-    return newArray3;
+    return newArray;
 }
 
 console.log(moreThan5Chars(testArray2)); 
 
-// 4) ["Rosso", "Verde", "Giallo", "Arancione", "Magenta", "Blu"];
+// 4) stringa con prima lettera degli elementi maiuscola; 
+// risultato["Rosso", "Verde", "Giallo", "Arancione", 
+// "Magenta", "Blu"];
 function FirstUpperCase(array) {
-  
+
+    const newArray = []; 
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        
+        const firstChar = element[0]; 
+        const firstCharUpperCase = firstChar.toUpperCase(); 
+        const remainingElement = element.substring(1) ;
+//indice 1 prende tutte le lettere a partire dalla prima, 
+//se non si specifica fine, prosegue per tutta lunghezza. 
+        const newElement = firstCharUpperCase + remainingElement; 
+
+        newArray.push(newElement); 
+    
+    }
+        
+    return newArray;
 }
 
-console.log(FirstUpperCase(testArray2)); 
+console.log('first uppercase', FirstUpperCase(testArray2)); 
 
 // 5) somma degli elementi dell'array;
-function SuperSumAll(array) {
+function superSumAll(array) {
 
+    let result = 0; 
+    // senza array.flat():
+    // for (let i = 0; i < array.length; i++) {
+    //     const riga = array[i]; 
+
+    //     for (let j = 0; j < riga.length; j++) {
+    //         const element = riga[j]; 
+    //         result = result + element; 
+    //     }
+    // } 
+
+    const flattenArray = array.flat();   
+    for (let i = 0; i < flattenArray.length; i++) {
+        const element = flattenArray[i]; 
+        result = result + element;
+        
+    }
+
+    return result;
 }
 
-
-console.log(SuperSumAll(testArray3)); 
+console.log(superSumAll(testArray3)); 
 
 //______ PER CASA _______________________________________________ 
 
 // 1) clone con tutti valori diviso 3; 
-function cloneAndDivideBy3(array, divider) {
+function cloneAndDivideBy3(array, divider = 2) {
     
     const newArray = [];  
 
     for (let i = 0; i < array.length; i++) {
          const element = array[i];
-         const elementDividedBy3 = element / 3;
+         const elementDividedBy3 = element / divider;
          newArray.push(elementDividedBy3);
     }  
         
@@ -96,8 +130,11 @@ function cloneAndDivideBy3(array, divider) {
 } 
 
 console.log(cloneAndDivideBy3(testArray1, 3)); 
+//                              nuovo valore di "divider";
 
-console.log(cloneAndDivideBy3(testArray1));
+console.log(cloneAndDivideBy3(testArray1)); 
+//se non dichiarato, "divider" avrà valore default 2; 
+// (vedi riga 111);
 
 // 2) clone con tutti valori < 10;
 function cloneAndFilterByMax(array, max) {
@@ -106,7 +143,7 @@ function cloneAndFilterByMax(array, max) {
 
         for (let i = 0; i < array.length; i++) {
             const element = array[i]; 
-            if (element < 10) {
+            if (element < max) {
                 newArray.push(element);
             }   
         } 
@@ -115,6 +152,7 @@ function cloneAndFilterByMax(array, max) {
 } 
 
 console.log(cloneAndFilterByMax(testArray1, 10)); 
+//                                         "max"; 
 
 // 3) array con valori invertiti ( da ultimo a primo);
 function reverse(array) { 
