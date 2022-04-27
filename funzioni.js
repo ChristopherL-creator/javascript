@@ -243,87 +243,148 @@
 
 // ______________ FILTERING ____________________ 
 
-const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12]; 
+// const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12]; 
 
-function keepEven(array) {
+// function keepEven(array) {
     
+//     const newArray = []; 
+
+//     for (let i =  0; i <  array.length; i++ ) {
+//         const element = array[i]; 
+
+//         const isElementEven = element % 2 === 0; 
+
+//         if(isElementEven){ 
+//             newArray.push(element);
+//         }
+        
+//     } 
+
+//     return newArray;
+// } 
+
+// console.log('keepEven', keepEven(testArray)); 
+
+// //--------------------------------------------------------
+
+// function keepGreaterThan10(array) {
+    
+//     const newArray = []; 
+
+//     for (let i =  0; i <  array.length; i++ ) {
+//         const element = array[i]; 
+
+//         const isElementEven = element > 10; 
+
+//         if(isElementEven){ 
+//             newArray.push(element);
+//         }
+        
+//     } 
+
+//     return newArray;
+// } 
+
+// console.log(keepGreaterThan10(testArray)); 
+
+// //--------------------------------------------------------
+
+// function filter(array, filterFunction) {
+    
+//     const newArray = []; 
+
+//     for (let i =  0; i <  array.length; i++ ) {
+//         const element = array[i]; 
+
+//         const isElementToAdd = filterFunction(element); 
+
+//         if(isElementToAdd){ 
+//             newArray.push(element);
+//         }
+        
+//     } 
+
+//     return newArray;
+// } 
+
+// function isEven(number) {
+//     if (number % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     } 
+// // return number % 2 === 0; 
+// } 
+
+// function isGreaterThan10(number) { 
+//     return number > 10;
+// }
+
+// console.log('isEven', filter(testArray,isEven)); 
+// // passo a funzione superiore l'array "testArray", 
+// // e funzione "isEven"; 
+
+// console.log('isGreaterThan10', filter(testArray,isGreaterThan10)); 
+// console.log('lambda dispari', filter(testArray, (number) => number % 2 === 1)); 
+// // passo una lambda;
+
+
+// console.log('preset filter', testArray.filter(isEven)); 
+// esiste già una funzione "filter": array.filter(funzione); 
+
+// ___________ MAPPING ________________________ 
+
+const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12];
+
+function addOneToAllElements(array) {
     const newArray = []; 
 
-    for (let i =  0; i <  array.length; i++ ) {
+    for (let i = 0; i < array.length; i++) {
         const element = array[i]; 
 
-        const isElementEven = element % 2 === 0; 
+        const newElement = element + 1; 
+//      elemento mapping;
 
-        if(isElementEven){ 
-            newArray.push(element);
-        }
-        
+        newArray.push(newElement); 
+
     } 
 
     return newArray;
 } 
 
-console.log(keepEven(testArray)); 
-
-//--------------------------------------------------------
-
-function keepGreaterThan10(array) {
-    
+function map(array, mappingFunction) {
     const newArray = []; 
 
-    for (let i =  0; i <  array.length; i++ ) {
+    for (let i = 0; i < array.length; i++) {
         const element = array[i]; 
 
-        const isElementEven = element > 10; 
+        const newElement = mappingFunction(element); 
+//                          mapping function;
 
-        if(isElementEven){ 
-            newArray.push(element);
-        }
-        
+        newArray.push(newElement); 
+
     } 
 
     return newArray;
 } 
 
-console.log(keepGreaterThan10(testArray)); 
+console.log('addOneToAllElements', (addOneToAllElements(testArray)) ); 
 
-//--------------------------------------------------------
-
-function filter(array, filterFunction) {
-    
-    const newArray = []; 
-
-    for (let i =  0; i <  array.length; i++ ) {
-        const element = array[i]; 
-
-        const isElementToAdd = filterFunction(element); 
-
-        if(isElementToAdd){ 
-            newArray.push(element);
-        }
-        
-    } 
-
-    return newArray;
+// Mapping function, prende stesso elemento, 
+// e lo restituisce cambiato;
+function addOne(element) {
+    return element + 1;
 } 
 
-function isEven(number) {
-    if (number % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    } 
-// return number % 2 === 0;
-} 
+console.log('map addOne', map(testArray, addOne)); 
 
-function isGreaterThan10(number) { 
-    return number > 10;
-}
+console.log("javascript map", testArray.map(addOne)); 
+// funzione javascript, usata più spesso; 
 
-console.log(filter(testArray,isEven)); 
-// passo a funzione superiore l'array "testArray", 
-// e funzione "isEven"; 
+console.log('lambda map square', map(testArray, (element) => element * element)); 
+// mapping con lambda; 
 
-console.log(filter(testArray,isGreaterThan10)); 
+console.log('javascript map square', testArray.map((element) => element * element)); 
+// mapping con funzione javascript; 
 
-
+// esercizi, prima funzione estesa, e poi lambda; 
