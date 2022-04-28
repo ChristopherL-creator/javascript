@@ -387,4 +387,77 @@ console.log('lambda map square', map(testArray, (element) => element * element))
 console.log('javascript map square', testArray.map((element) => element * element)); 
 // mapping con funzione javascript; 
 
-//  
+// ____________________ REDUCING _______________________________ 
+
+function sumAll(array) {
+    
+    let result = 0; 
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i]; 
+
+        result = result + element;
+        
+    } 
+
+    return result;
+} 
+
+function multiplyAll(array) {
+    
+    let result = 1; 
+//  funzioni di reducing non lavorano mai su valori iniziali vuoti;
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i]; 
+
+        result = result * element;
+        
+    } 
+
+    return result;
+}
+
+console.log(sumAll(testArray)); 
+
+function reducerSumAll(previous, current) {
+//  "previous" arriva da giro precedente, "current" è il primo elemento 
+//  dell'array, lo sto analizzando in questo momento;
+
+    const result = previous + current; 
+    return result;
+} 
+console.log('somma tutti reduce lambda', testArray.reduce((p,c) => p + c, 0)); 
+console.log('somma tutti reduce', testArray.reduce(reducerSumAll, 0)); 
+//                                                      valore di partenza: 0; 
+//  se non do volare di partenza, prende come primo elemento il primo elemento 
+//  dell'array, e come secondo il secondo; 
+function reduceMultiplyAll(previous, current) {
+    const result = previous * current; 
+    return result;
+}
+
+console.log('moltiplica tutti reduce', testArray.reduce(reduceMultiplyAll, 1)); 
+
+//  reduce per funzione flitering: 
+
+function filterHigherThan2(element) { 
+    if ( element > 2) { 
+        return true;
+    } else { 
+        return false;
+    }
+} 
+
+// console.log('moltiplica tutti reduce', testArray.reduce(, 1)); 
+
+function reducerSumAllEvenIndex(previous, current, index) {
+    if (index % 2 === 0) {
+        const result = previous + current; 
+        return result;
+    } else {
+        return previous;
+    }
+}
+
+console.log(testArray.reduce(reducerSumAllEvenIndex, 0)); 
