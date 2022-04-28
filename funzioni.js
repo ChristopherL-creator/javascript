@@ -387,4 +387,4 @@ console.log('lambda map square', map(testArray, (element) => element * element))
 console.log('javascript map square', testArray.map((element) => element * element)); 
 // mapping con funzione javascript; 
 
-// esercizi, prima funzione estesa, e poi lambda; 
+//  

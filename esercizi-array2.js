@@ -9,208 +9,185 @@ const testArray6 = [true, 'pippo', 204, 'verde', 3000, 100, false];
 //filtrare testArray4 in modo che rimangano solo numeri 
 // positivi;
 
-function filteringPositives(array) {
+function filteringPositivesNew(number) {
     
-    const newArray = []; 
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const positive = element > 0; 
-        if (positive) {
-            newArray.push(element); 
-
-        }
-    } 
-    return newArray;
+    return number > 0;
 } 
-console.log(filteringPositives(testArray4));
+console.log(testArray4.filter(filteringPositivesNew));
 
-console.log(testArray4.filter((number)=>number>0));
+console.log(testArray4.filter((number) => number > 0));
 
-// filtrare testArray4 in modo che rimangano solo numeri 
-// divisibili per 3;
-function filteringPositives(array) {
+//  filtrare testArray4 in modo che rimangano solo numeri 
+//  divisibili per 3;
+function onlyDivisibleBy3(element) {
     
-    const newArray = []; 
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const isDivisibilePer3 = element % 3 === 0; 
-        if (isDivisibilePer3) {
-            newArray.push(element); 
-
-        }
-    } 
-    return newArray;
+    if (element % 3 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 } 
-console.log(filteringPositives(testArray4));
+console.log(testArray4.filter(onlyDivisibleBy3));
 
 console.log(testArray4.filter((number)=>number%3===0));
 
 
-// filtrare testArray4 in modo che rimangano solo numeri 
-// divisibili per 3 e 4;
-function filteringPositives(array) {
-    
-    const newArray = []; 
+//  filtrare testArray4 in modo che rimangano solo numeri 
+//  divisibili per 3 e 4;
+function divisibleBy3And4(element) {
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const isDivisibilePer3 = element % 3 === 0;
-        const isDivisibilePer4 = element % 4 === 0;
-        if (isDivisibilePer3) {
-            newArray.push(element); 
-        } else if (isDivisibilePer4) {
-            newArray.push(element)
-        }
+    const isDivisibilePer3 = element % 3 === 0;
+    const isDivisibilePer4 = element % 4 === 0;
+    if (isDivisibilePer3 && isDivisibilePer4) {
+        return true; 
+    } else { 
+        return false
     } 
-    return newArray;
 } 
-console.log(filteringPositives(testArray4));
 
-console.log(testArray4.filter((number)=>number%3===0||number%4===0));
+console.log(testArray4.filter(divisibleBy3And4));
 
-// filtrare testArray5 in modo che rimangano solo le 
-// stringhe più corte di 6 lettere; 
-function moreThan6Chars(array) {
-    
-    const newArray = []; 
+console.log(testArray4.filter((number )=> (number % 3 ===  0) && (number % 4 === 0)));
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const shorterThan6 = element.length < 6; 
-        if (shorterThan6) {
-            newArray.push(element); 
+//  filtrare testArray5 in modo che rimangano solo le 
+//  stringhe più corte di 6 lettere; 
+function moreThan6Chars(element) {
 
-        }
-    } 
-    return newArray;
+    const shorterThan6 = element.length < 6; 
+    if (shorterThan6) {
+        return true; 
+    } else { 
+        return false;
+    }
 } 
-console.log(moreThan6Chars(testArray5));
+console.log(testArray5.filter(moreThan6Chars));
 
 console.log(testArray5.filter((stringa) => stringa.length < 6));
 
-// filtrare testArray5 in modo che rimangano solo le 
-// stringhe che contengono la lettera 'n'; 
-function containsOnlyN(array) {
+//  filtrare testArray5 in modo che rimangano solo le 
+//  stringhe che contengono la lettera 'n'; 
+function containsOnlyN(element) {
     
-    const newArray = []; 
+    if (element.includes ('n')) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const containsN = element.includes ("n"); 
-        if (containsN) {
-            newArray.push(element); 
-
-        }
-    } 
-    return newArray;
-} 
-console.log(containsOnlyN(testArray5));
+console.log(testArray5.filter(containsOnlyN));
 
 console.log(testArray5.filter((stringa) => stringa.includes ("n")));
 
-// filtrare testArray6 in modo che rimangano solo i numeri; 
-function onlyNumbers(array) {
-    
-    const newArray = []; 
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const elementTypeNumber = typeof element === 'number'; 
-        if (elementTypeNumber) {
-            newArray.push(element); 
-
-        }
-    } 
-    return newArray;
+//  filtrare testArray6 in modo che rimangano solo i numeri; 
+function onlyNumbers(element) {
+     
+    if (typeof element === 'number') {
+        return true; 
+    } else { 
+        return false;
+    }
 } 
-console.log(onlyNumbers(testArray6));
+
+console.log(testArray6.filter(onlyNumbers));
 
 console.log(testArray6.filter((element) => typeof element === 'number'));
 
-// mappare testArray4 dividendo tutti i numeri per 3;
-function mapDiv3(array) {
+//  mappare testArray4 dividendo tutti i numeri per 3;
+function mapDiv3(element) {
     
-    const newArray = []; 
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const elementPer3 = element/3; 
-        newArray.push(elementPer3); 
-
-        }
-    return newArray;
+    return element / 3;
 } 
-console.log(mapDiv3(testArray4));
+console.log(testArray4.map(mapDiv3)); 
 
 console.log(testArray4.map((number) => number / 3));
 
 
-// mappare testArray4 facendo la radice quadrata di tutti i 
-// numeri;
-function mapDiv3(array) {
-    
-    const newArray = []; 
+//  mappare testArray4 facendo la radice quadrata di tutti i 
+//  numeri;
+function sqrRoot(element) {
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        const elementSquare = Math.sqrt(element); 
-        newArray.push(elementSquare); 
-
-        }
-    return newArray;
+    return Math.sqrt(element)
 } 
-console.log(mapDiv3(testArray4));
+console.log(testArray4.map(sqrRoot));
 
 console.log(testArray4.map((number) => Math.sqrt(number)));
 
-
-// mappare testArray4 sommando 1 solo ai numeri dispari; 
-function mapOddPlus1(array) {
+//  mappare testArray4 sommando 1 solo ai numeri dispari; 
+function mapOddPlus1(element) {
     
-    const newArray = []; 
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
-        if (element % 2 !== 0) {
-            const oddPlus1 = element + 1; 
-            newArray.push(oddPlus1); 
-        } else { 
-         newArray.push(element);
-        }
-
-        }
-    return newArray;
-} 
-console.log(mapOddPlus1(testArray4));
-
-console.log(testArray4.map((element) => element % 2 !== 0) );
-
-// mappare testArray5 rendendo maiuscole la prima e l'ultima 
-// lettera di ogni parola; 
-function FirstUpperCase(array) {
-
-    const newArray = []; 
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        
-        const firstChar = element[0]; 
-        const firstCharUpperCase = firstChar.toUpperCase(); 
-        const remainingElement = element.substring(1) ;
-//indice 1 prende tutte le lettere a partire dalla prima, 
-//se non si specifica fine, prosegue per tutta lunghezza. 
-        const newElement = firstCharUpperCase + remainingElement; 
-
-        newArray.push(newElement); 
-    
+    if (element % 2 !== 0) {
+       const odd = element + 1; 
+       return odd;
+    } else {
+        return element;
     }
-        
-    return newArray;
-}
+} 
+    
+console.log(testArray4.map(mapOddPlus1)); 
 
-console.log(FirstUpperCase(testArray5)); 
+//  operatore ternario: condizione ? cosa succede se vera : cosa se falso;
+console.log(testArray4.map((element) => element % 2 === 0 ? element : element + 1));
 
-// mappare testArray5 aggiungendo in fondo ad ogni stringa la 
-// lunghezza della stessa;
+//  mappare testArray5 rendendo maiuscole la prima e l'ultima 
+//  lettera di ogni parola; 
+function firstLastUpperCase(element) {
+
+    const firstChar = element[0]; 
+    const firstCharUpper = firstChar.toUpperCase(); 
+    const lastChar = element[element.length - 1]; 
+    const lastCharUpper = lastChar.toUpperCase(); 
+    const remainingString = element.substring(1, element.length - 1); 
+    const newString = firstCharUpper + remainingString + lastCharUpper; 
+
+    return newString; 
+} 
+
+console.log(testArray5.map(firstLastUpperCase)); 
+console.log(testArray5.map((element) => element[0].toUpperCase() + element.substring(1, element.length -1) + element[element.length -1].toUpperCase()));
+
+//  mappare testArray5 aggiungendo in fondo ad ogni stringa la 
+//  lunghezza della stessa; 
+
+function appendLength(element) {
+    const newElement = element + ', ' + element.length; 
+    return newElement;
+} 
+
+console.log(testArray5.map(appendLength)); 
+
+console.log(testArray5.map((element) => element + ', ' + element.length)); 
+
+//  filtrare elementi di testArray4, in modo che rimangano quelli con 
+//  indice pari; 
+
+function filterByIndex(element, index) { 
+//  devo inserire sempre 2 parametri se voglio lavorare sull'index, sennò
+//  mi prende comunque element;
+    if (index % 2 === 0) { 
+        return true;
+    } else{ 
+        return false;
+    }
+} 
+
+console.log(testArray4.filter(filterByIndex)); 
+
+//  mappare testArray4, così che ad ogni elemento venga sommato (se esiste) 
+//  il successivo; 
+
+function addNext(element, index, array) {
+    
+    const nextIndex = index + 1; 
+    
+    if (nextIndex < array.length) { 
+//  finché nextIndex non supera la lunghezza dell'array;
+        const nextElement = array[nextIndex]; 
+        const result = element + nextElement; 
+        return result; 
+    } else { 
+        return element;
+    }
+} 
+
+console.log(testArray4.map(addNext));
