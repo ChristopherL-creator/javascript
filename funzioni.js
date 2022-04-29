@@ -241,7 +241,9 @@
 
 // console.log(sommaTre(5)); 
 
-// ______________ FILTERING ____________________ 
+// ______________ FILTERING ____________________  
+
+//  da come risultato "True" o "False";
 
 // const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12]; 
 
@@ -334,130 +336,180 @@
 
 // ___________ MAPPING ________________________ 
 
-const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12];
+// const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12];
 
-function addOneToAllElements(array) {
-    const newArray = []; 
+// function addOneToAllElements(array) {
+//     const newArray = []; 
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i]; 
 
-        const newElement = element + 1; 
-//      elemento mapping;
+//         const newElement = element + 1; 
+// //      elemento mapping;
 
-        newArray.push(newElement); 
+//         newArray.push(newElement); 
 
-    } 
+//     } 
 
-    return newArray;
-} 
+//     return newArray;
+// } 
 
-function map(array, mappingFunction) {
-    const newArray = []; 
+// function map(array, mappingFunction) {
+//     const newArray = []; 
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i]; 
 
-        const newElement = mappingFunction(element); 
-//                          mapping function;
+//         const newElement = mappingFunction(element); 
+// //                          mapping function;
 
-        newArray.push(newElement); 
+//         newArray.push(newElement); 
 
-    } 
+//     } 
 
-    return newArray;
-} 
+//     return newArray;
+// } 
 
-console.log('addOneToAllElements', (addOneToAllElements(testArray)) ); 
+// console.log('addOneToAllElements', (addOneToAllElements(testArray)) ); 
 
-// Mapping function, prende stesso elemento, 
-// e lo restituisce cambiato;
-function addOne(element) {
-    return element + 1;
-} 
+// // Mapping function, prende stesso elemento, 
+// // e lo restituisce cambiato;
+// function addOne(element) {
+//     return element + 1;
+// } 
 
-console.log('map addOne', map(testArray, addOne)); 
+// console.log('map addOne', map(testArray, addOne)); 
 
-console.log("javascript map", testArray.map(addOne)); 
-// funzione javascript, usata più spesso; 
+// console.log("javascript map", testArray.map(addOne)); 
+// // funzione javascript, usata più spesso; 
 
-console.log('lambda map square', map(testArray, (element) => element * element)); 
-// mapping con lambda; 
+// console.log('lambda map square', map(testArray, (element) => element * element)); 
+// // mapping con lambda; 
 
-console.log('javascript map square', testArray.map((element) => element * element)); 
-// mapping con funzione javascript; 
+// console.log('javascript map square', testArray.map((element) => element * element)); 
+// // mapping con funzione javascript; 
 
-// ____________________ REDUCING _______________________________ 
+// // ____________________ REDUCING _______________________________ 
 
-function sumAll(array) {
+// function sumAll(array) {
     
-    let result = 0; 
+//     let result = 0; 
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i]; 
 
-        result = result + element;
+//         result = result + element;
         
-    } 
+//     } 
 
-    return result;
-} 
+//     return result;
+// } 
 
-function multiplyAll(array) {
+// function multiplyAll(array) {
     
-    let result = 1; 
-//  funzioni di reducing non lavorano mai su valori iniziali vuoti;
+//     let result = 1; 
+// //  funzioni di reducing non lavorano mai su valori iniziali vuoti;
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]; 
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i]; 
 
-        result = result * element;
+//         result = result * element;
         
-    } 
+//     } 
 
-    return result;
-}
+//     return result;
+// }
 
-console.log(sumAll(testArray)); 
+// console.log(sumAll(testArray)); 
 
-function reducerSumAll(previous, current) {
-//  "previous" arriva da giro precedente, "current" è il primo elemento 
-//  dell'array, lo sto analizzando in questo momento;
+// function reducerSumAll(previous, current) {
+// //  "previous" arriva da giro precedente, "current" è il primo elemento 
+// //  dell'array, lo sto analizzando in questo momento;
 
-    const result = previous + current; 
-    return result;
-} 
-console.log('somma tutti reduce lambda', testArray.reduce((p,c) => p + c, 0)); 
-console.log('somma tutti reduce', testArray.reduce(reducerSumAll, 0)); 
-//                                                      valore di partenza: 0; 
-//  se non do volare di partenza, prende come primo elemento il primo elemento 
-//  dell'array, e come secondo il secondo; 
-function reduceMultiplyAll(previous, current) {
-    const result = previous * current; 
-    return result;
-}
+//     const result = previous + current; 
+//     return result;
+// } 
+// console.log('somma tutti reduce lambda', testArray.reduce((p,c) => p + c, 0)); 
+// console.log('somma tutti reduce', testArray.reduce(reducerSumAll, 0)); 
+// //                                                      valore di partenza: 0; 
+// //  se non do volare di partenza, prende come primo elemento il primo elemento 
+// //  dell'array, e come secondo il secondo; 
+// function reduceMultiplyAll(previous, current) {
+//     const result = previous * current; 
+//     return result;
+// }
 
-console.log('moltiplica tutti reduce', testArray.reduce(reduceMultiplyAll, 1)); 
+// console.log('moltiplica tutti reduce', testArray.reduce(reduceMultiplyAll, 1)); 
 
-//  reduce per funzione flitering: 
+// //  reduce per funzione flitering: 
 
-function filterHigherThan2(element) { 
-    if ( element > 2) { 
-        return true;
+// function filterHigherThan2(element) { 
+//     if ( element > 2) { 
+//         return true;
+//     } else { 
+//         return false;
+//     }
+// } 
+
+// // console.log('moltiplica tutti reduce', testArray.reduce(, 1)); 
+
+// function reducerSumAllEvenIndex(previous, current, index) {
+//     if (index % 2 === 0) {
+//         const result = previous + current; 
+//         return result;
+//     } else {
+//         return previous;
+//     }
+// }
+
+// console.log(testArray.reduce(reducerSumAllEvenIndex, 0)); 
+
+//  ____________ SORTING ________________________________________  
+
+// sorting tramite funzione:
+function sortNumbers(el1, el2){ 
+    if (el1 > el2) {
+        return 1;
+    } else if (el1 < el2) {
+        return -1;
     } else { 
-        return false;
-    }
+        return 0;
+    } 
 } 
 
-// console.log('moltiplica tutti reduce', testArray.reduce(, 1)); 
+//  Sorting  da 1 per ordine giusto, -1 per ordine sbagliato, sennò 0;
 
-function reducerSumAllEvenIndex(previous, current, index) {
-    if (index % 2 === 0) {
-        const result = previous + current; 
-        return result;
-    } else {
-        return previous;
-    }
+const arrayOfNumbers = [1, 5, 3, 8, 6]; 
+
+arrayOfNumbers.sort(sortNumbers2); 
+
+const arrayOfStrings = ['balcone', 'aritmetica', 'giallo', 'zuzzerellone']; 
+
+//  inserisco la funzione che voglio vedere tra le parentesi;
+arrayOfStrings.sort(sortStrings); 
+
+console.log(arrayOfStrings); 
+
+console.log(arrayOfNumbers); 
+
+//  ho dovuto invertire primo e secondo return da sortNumbers;
+//  const testArray4 = [2, 4, 7, -9, 1000, 45, 2, 12, 333, -1000, 123, 34]; 
+
+//  testArray4.sort(); 
+
+//  console.log(testArray4);
+
+//  dal più grande al più piccolo (numeri);
+function sortNumbers2(el1, el2) {
+    return el2 - el1;
 }
 
-console.log(testArray.reduce(reducerSumAllEvenIndex, 0)); 
+//  sorting di stringhe: 
+function sortStrings(el1, el2) {
+    return el1.localeCompare(el2) * -1;
+} 
+
+//  sorting per lunghezza:
+function compareStringByLength(el1, el2) {
+    return el1.length - el2.length;
+}

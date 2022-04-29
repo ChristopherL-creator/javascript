@@ -93,17 +93,6 @@ const studente7 = {
     corso: corso3
 } 
 
-
-const studente8 = { 
-    nome: 'Leslie', 
-    cognome: 'Fritas Olaechea Stefanny', 
-    genere : 'femmina', 
-    eta: 26, 
-    citta: 'Lima', 
-    sposato: false, 
-    corso: corso1
-}
-
 const studente9 = { 
     nome: 'Leslie', 
     cognome: 'Fritas Olaechea Stefanny', 
@@ -135,12 +124,13 @@ const studente11 = {
     corso: corso1
 } 
 
-const studenti = [studente2, studente3, studente4, studente5, studente6, studente7, studente8, studente9, studente10, studente11]
+const studenti = [studente2, studente3, studente4, studente5, studente6, 
+                studente7, studente9, studente10, studente11];
 console.log(studenti)
 
-function printStudents(){
-for (let i = 0; i < studenti.length; i++) {
-    const studente = studenti[i]; 
+function printStudents(studentArray){
+for (let i = 0; i < studentArray.length; i++) {
+    const studente = studentArray[i]; 
     console.log('nome: ' + studente.nome); 
     console.log('cognome: ' + studente.cognome);
     console.log('genere: ' + studente.genere);
@@ -150,22 +140,58 @@ for (let i = 0; i < studenti.length; i++) {
 }
 } 
 
-printStudents();
+// printStudents(studenti);
 
 //  stampare solo schede studenti donne; 
-function studentiFemmine(studente) {
-    for (let i = 0; i < studenti.length; i++) {
-        const studente = studenti[i]; 
-        if (studente.genere === 'femmina') {
-        console.log('nome: ' + studente.nome); 
-        console.log('cognome: ' + studente.cognome);
-        console.log('genere: ' + studente.genere);
-        console.log('eta: ' + studente.eta); 
-        console.log(' '); 
-        console.log('*******')
-        }
-    }
+
+// con filtering:
+function isFemale(student) {
+    // if (student.genere === 'femmina') {
+    //     return true;
+    // } else {
+    //     return false;
+    // } 
+
+    return student.genere === 'femmina';
+}
+
+function studentiFemmine(studentArray) { 
+
+//  Best Solution:
+    // const femaleStudents = []; 
+
+    // for (let i = 0; i < studentArray.length; i++) {
+    //     const studente = studentArray[i]; 
+    //     if (studente.genere === 'femmina') {
+    //         femaleStudents.push(studente);
+    //     }
+    // }  
+
+//  richiamo filtering:
+//  const femaleStudents = studentArray.filter(isFemale); 
+
+//  lambda: 
+    const femaleStudents = studentArray.filter((s) => s.genere === 'femmina');
+
+    printStudents(femaleStudents); 
+
+//  ricostruendo l'intero object:
+    // for (let i = 0; i < studentArray.length; i++) {
+    //     const studente = studentArray[i]; 
+    //     if (studente.genere === 'femmina') {
+    //     console.log('nome: ' + studente.nome); 
+    //     console.log('cognome: ' + studente.cognome);
+    //     console.log('genere: ' + studente.genere);
+    //     console.log('eta: ' + studente.eta); 
+    //     console.log(' '); 
+    //     console.log('*******')
+    //     }
+    // }
 } 
 
-studentiFemmine(); 
+studentiFemmine(studenti); 
 
+//  29.04.2022: fatte ottimizzazioni;
+
+studenti.sort()
+printStudents(studenti)
