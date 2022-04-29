@@ -66,7 +66,7 @@ function printSingleStudent(studente){
     console.log('nome: ' + studente.nome); 
     console.log('cognome: ' + studente.cognome);
     console.log('genere: ' + studente.genere);
-    console.log('eta: ' + studente.eta); 
+    console.log('eta: ' + studente.età); 
     console.log(' ');
     console.log('------');
 }
@@ -99,7 +99,7 @@ printOldestStudent(studenti);
 //  ________________________________________________________________________
 
 studenti.sort(compareStudentsByAgeAndCognome);
-printStudents(studenti); 
+// printStudents(studenti); 
 
 
 function compareStudentsByCognome(student1, student2) {
@@ -129,4 +129,7 @@ function compareStudentsByAgeAndCognome(student1, student2) {
     } else { 
         return ordine;
     }
-}
+} 
+studenti.sort(compareStudentsByAge);
+
+console.log('age', studenti);
