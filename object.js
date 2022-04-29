@@ -11,8 +11,12 @@ const studente1 = {
     cognome:'stringa', 
     età: 28, 
     sposato: false, 
-    corso: corso1, 
-    voti: voti1
+    corso: { 
+        nome:'programmtore mobile', 
+        ore: 250, 
+        terminato: true
+    }, 
+    voti: [9, 8, 7, 6]
 //  "proprietà: valore"
 } 
 
@@ -32,7 +36,7 @@ const studenti = [studente1, studente2];
 console.log(studenti);
 
 console.log(studente1.nome + ' ' + studente1.cognome); 
-//  chiamo priorità scrivendola dopo il punto; 
+//  chiamo proprietà scrivendola dopo il punto; 
 console.log(studente1.corso.terminato); 
 //  posso affinare la ricerca mettendo "." tra oggetti, parametri, etc.;
 
