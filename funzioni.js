@@ -432,7 +432,7 @@
 // console.log('somma tutti reduce lambda', testArray.reduce((p,c) => p + c, 0)); 
 // console.log('somma tutti reduce', testArray.reduce(reducerSumAll, 0)); 
 // //                                                      valore di partenza: 0; 
-// //  se non do volare di partenza, prende come primo elemento il primo elemento 
+// //  se non do valore di partenza, prende come primo elemento il primo elemento 
 // //  dell'array, e come secondo il secondo; 
 // function reduceMultiplyAll(previous, current) {
 //     const result = previous * current; 
